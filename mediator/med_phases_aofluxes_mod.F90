@@ -421,6 +421,7 @@ contains
     character(len=CX)       :: tmpstr
     logical,save            :: first_call = .true.
     character(*),parameter  :: subName = '(med_aofluxes_run) '
+    real(R8)                :: seq_flux_atmocn_minwind = 0.5d0
     !-----------------------------------------------------------------------
 
     call t_startf('MED:'//subname)
@@ -501,7 +502,8 @@ contains
          lsize, aoflux%zbot, aoflux%ubot, aoflux%vbot, aoflux%thbot, &
          aoflux%shum, aoflux%shum_16O, aoflux%shum_HDO, aoflux%shum_18O, aoflux%dens , &
          aoflux%tbot, aoflux%uocn, aoflux%vocn, &
-         aoflux%tocn, aoflux%mask, aoflux%sen, aoflux%lat, aoflux%lwup, &
+         aoflux%tocn, aoflux%mask, seq_flux_atmocn_minwind, &
+         aoflux%sen, aoflux%lat, aoflux%lwup, &
          aoflux%roce_16O, aoflux%roce_HDO, aoflux%roce_18O, &
          aoflux%evap, aoflux%evap_16O, aoflux%evap_HDO, aoflux%evap_18O, &
          aoflux%taux, aoflux%tauy, aoflux%tref, aoflux%qref, &
